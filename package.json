@@ -1,12 +1,15 @@
 {
+  "homepage": "http://erniesmith82.github.io/Random_Playing_Card_Project",
   "name": "vanillajs-hello",
   "version": "1.0.0",
   "description": "Professional Boilerplate for Vanilla.js Web Apps",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000",
-    "build": "webpack --mode development --verbose --colors --display-error-details",
-    "deploy": "node deploy-to-github.js"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "webpack --mode development",
+    "deploy:github": "node deploy-to-github.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +32,6 @@
   "bugs": {
     "url": "https://github.com/4GeeksAcademy/vanillajs-hello/issues"
   },
-  "homepage": "https://github.com/4GeeksAcademy/vanillajs-hello#readme",
   "dependencies": {
     "@popperjs/core": "^2.10.1",
     "bootstrap": "^5.1.1"
